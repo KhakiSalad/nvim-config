@@ -12,7 +12,7 @@ return { -- You can easily change to a different colorscheme.
     require('everforest').setup { transparent_background_level = 2 }
     -- You can configure highlights by doing something like
     --vim.cmd.hi 'Comment gui=none'
-    vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
-    vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
+    -- vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
+    vim.api.nvim_set_hl(1, 'NormalFloat', { bg = 'none' })
   end,
 }

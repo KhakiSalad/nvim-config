@@ -121,5 +121,11 @@ require('lazy').setup {
   { import = 'custom.plugins' },
 }
 
+if vim.g.neovide then
+  vim.o.guifont = 'FiraCode Nerd Font:h10'
+  vim.g.neovide_cursor_animation_length = 0
+  vim.g.neovide_cursor_animate_in_insert_mode = false
+  vim.g.neovide_scroll_animation_length = 0
+end
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

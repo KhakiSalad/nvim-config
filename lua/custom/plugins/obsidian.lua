@@ -4,7 +4,7 @@ return {
     workspaces = {
       {
         name = 'ips',
-        path = '~/Documents/Obsidian Vault',
+        path = 'D:\\uni_diss\\obsidian-ips',
       },
     },
   },
