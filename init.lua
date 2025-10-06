@@ -121,5 +121,18 @@ require('lazy').setup {
   { import = 'custom.plugins' },
 }
 
+vim.keymap.set('n', '<leader>tn', '<Cmd>Neotree<CR>')
+
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+
+if vim.g.neovide then
+  -- Put anything you want to happen only in Neovide here
+  vim.o.guifont = 'FiraCode Nerd Font:h11' -- text below applies for VimScript
+  vim.g.neovide_position_animation_length = 0
+  vim.g.neovide_cursor_animation_length = 0
+  vim.g.neovide_scroll_animation_length = 0
+end
+
+vim.cmd.colorscheme 'wildcharm'
+vim.o.background = 'light'

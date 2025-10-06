@@ -97,15 +97,43 @@ return { -- LSP Configuration & Plugins
     --  - settings (table): Override the default settings passed when initializing the server.
     --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
     local servers = {
-      pyright = {},
+      --pyright = {},
+      mypy = {},
+      pylsp = {
+        root_markers = {
+          'setup.py',
+          'requirements.txt',
+          'Pipfile',
+          '.git',
+        },
+        settings = {
+          jedi = {
+            environment = function()
+              local cwd = vim.fn.getcwd()
+              if vim.fn.isdirectory(cwd .. '/.venv') == 1 then
+                return cwd .. '/.venv/bin/python'
+              end
+              return nil -- fallback to system python
+            end,
+          },
+        },
+      },
       clangd = {},
       cpptools = {},
-      pylsp = {},
       ast_grep = {},
       biome = {},
       zls = {},
-      fantomas = {},
-      fsautocomplete = {},
+      digestif = {},
+      ltex = {
+        settings = {
+          ltex = {
+            language = 'de-DE',
+          },
+        },
+      },
+      mdformat = {},
+      -- fantomas = {},
+      -- fsautocomplete = {},
       -- gopls = {},
       -- pyright = {},
       -- rust_analyzer = {},
