@@ -104,12 +104,41 @@ return { -- LSP Configuration & Plugins
         -- IndentWidth: '4'
         -- SortIncludes: 'false'
       },
-      pylsp = {},
+      pylsp = {
+        root_markers = {
+          'setup.py',
+          'requirements.txt',
+          'Pipfile',
+          '.git',
+        },
+        settings = {
+          jedi = {
+            environment = function()
+              local cwd = vim.fn.getcwd()
+              if vim.fn.isdirectory(cwd .. '/.venv') == 1 then
+                return cwd .. '/.venv/bin/python'
+              end
+              return nil -- fallback to system python
+            end,
+          },
+        },
+      },
+      clangd = {},
+      cpptools = {},
       ast_grep = {},
       biome = {},
       zls = {},
-      fantomas = {},
-      fsautocomplete = {},
+      digestif = {},
+      ltex = {
+        settings = {
+          ltex = {
+            language = 'de-DE',
+          },
+        },
+      },
+      mdformat = {},
+      -- fantomas = {},
+      -- fsautocomplete = {},
       -- gopls = {},
       -- pyright = {},
       -- rust_analyzer = {},
