@@ -138,4 +138,4 @@ end
 vim.opt.tabstop = 4
 vim.opt.expandtab = true
 vim.keymap.set('n', '<leader>b', ':b#<CR>', { desc = 'Return to previous buffer' })
-vim.keymap.set('n', '<leader>t', ':terminal', { desc = 'Open terminal' })
+vim.keymap.set('n', '<leader>t', ':terminal<CR>', { desc = 'Open terminal' })
