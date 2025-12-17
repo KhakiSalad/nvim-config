@@ -128,6 +128,26 @@ return { -- LSP Configuration & Plugins
       ast_grep = {},
       biome = {},
       zls = {},
+      html = {
+        settings = {
+          html = {
+            tabWidth = 2,
+            tabs = false,
+            suggest = {},
+          },
+        },
+        filetypes = {
+          'html',
+          'htmldjango',
+          'htmljinja',
+          'svelte',
+          'vue',
+          'svelte',
+          'astro',
+          'markdown',
+          'mdx',
+        },
+      },
       digestif = {},
       ltex = {
         settings = {
